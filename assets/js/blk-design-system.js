@@ -79,8 +79,8 @@ $(document).ready(function() {
       posX = event.clientX - window.innerWidth / 2;
       posY = event.clientY - window.innerWidth / 6;
 
-      squares1.style.transform = "perspective(500px) rotateY(" + posX * 0.05 + "deg) rotateX(" + posY * (-0.05) + "deg)";
-      squares2.style.transform = "perspective(500px) rotateY(" + posX * 0.05 + "deg) rotateX(" + posY * (-0.05) + "deg)";
+      squares1.style.transform = "perspective(500px) rotateY(" + posX * 0.07 + "deg) rotateX(" + posY * (-0.05) + "deg)";
+      squares2.style.transform = "perspective(500px) rotateY(" + posX * 0.15 + "deg) rotateX(" + posY * (-0.05) + "deg)";
       squares3.style.transform = "perspective(500px) rotateY(" + posX * 0.05 + "deg) rotateX(" + posY * (-0.05) + "deg)";
       squares4.style.transform = "perspective(500px) rotateY(" + posX * 0.05 + "deg) rotateX(" + posY * (-0.05) + "deg)";
       squares5.style.transform = "perspective(500px) rotateY(" + posX * 0.05 + "deg) rotateX(" + posY * (-0.05) + "deg)";
