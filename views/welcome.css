@@ -5,7 +5,7 @@ body{
     background-image: url(FinalLanding.svg);
     background-size: cover;
     background-size: cover;
-    background-position: center;
+    background-position: absolute;
     margin: auto;
     color:white;
 
