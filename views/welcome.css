@@ -1,0 +1,12 @@
+body{
+
+    /* background-color: black; */
+    /* background: linear-gradient(to left, #12c2e9, #c471ed, #f64f59);  */
+    background-image: url(FinalLanding.svg);
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    color:white;
+
+}
