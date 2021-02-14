@@ -313,20 +313,22 @@
         firebase.firestore().collection('doctors').get().then((doctorQuery) => {
           doctorQuery.forEach(doctor => doctors.push(doctor.data()));
           doctors.forEach((doctor) => {
-            $(document.getElementById('DocShow')).append(
-              '<div class="col">' +
-                '<div class="container">' +
-                  '<div class="card" style="width: 18rem;">' +
-                    '<img class="card-img-top" src="psych15.jpg" alt="Card image cap">' +
-                    '<div class="card-body">' +
-                      '<h5 class="card-title">Dr. ' + doctor.fName + ' ' + doctor.lName + '</h5>' +
-                      '<p class="card-text">' + doctor.city + ', ' + doctor.province + '</p>' +
-                      '<a onclick="checkAvailability(' + '`' + doctor.uid + '`' + ')" class="btn btn-primary">Send Video Request</a>' +
+            if (doctor.available) {
+              $(document.getElementById('DocShow')).append(
+                '<div class="col">' +
+                  '<div class="container">' +
+                    '<div class="card" style="width: 18rem;">' +
+                      '<img class="card-img-top" src="psych15.jpg" alt="Card image cap">' +
+                      '<div class="card-body">' +
+                        '<h5 class="card-title">Dr. ' + doctor.fName + ' ' + doctor.lName + '</h5>' +
+                        '<p class="card-text">' + doctor.city + ', ' + doctor.province + '</p>' +
+                        '<a onclick="checkAvailability(' + '`' + doctor.uid + '`' + ')" class="btn btn-primary">Send Video Request</a>' +
+                      '</div>' +
                     '</div>' +
                   '</div>' +
-                '</div>' +
-              '</div>'
-            );
+                '</div>'
+              );
+            }
           });
         });
       }
