@@ -175,7 +175,7 @@
             
                     <div class="col-md-12 mb-3">
                         <label for="address">Medical Verification ID      *Please allow up to two weeks for verification and account approval*</label>
-                        <input type="text" class="form-control border-light" id="address" required>
+                        <input type="text" class="form-control border-light" id="medicalId" required>
                         <div class="invalid-feedback">
                         Please provide a valid Medical ID.
                         </div>
@@ -264,7 +264,7 @@
                     </div> -->
 
                     <!-- <label class="form-label" for="customFile">Please attach a Profile Photo</label> -->
-                    <input type="file" class=" btn-outline-light" id="customFile" />
+                    <input type="file" class=" btn-outline-light" id="image" />
                     <div class="row justify-content-center" align = "center">
                     <button class="btn btn-primary text-center" onclick="createAccount()" type="button" id="button"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Signup</button>
                 </div>
@@ -281,11 +281,14 @@
             const day = document.getElementById('day').value;
             const year = document.getElementById('year').value;
             const address = document.getElementById('address').value;
+            const medicalId = document.getElementById('medicalId').value;
             const city = document.getElementById('city').value;
             const province = document.getElementById('province').value;
             const pCode = document.getElementById('pCode').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+            const image = document.getElementById('image').value;
+            console.log(image)
             const firebaseConfig = {
               apiKey: "AIzaSyAnZoE_5mt2yCOo9t7UHK8xWHl-EQB6EIM",
               authDomain: "willow-b91d1.firebaseapp.com",
@@ -306,13 +309,14 @@
                   day: day,
                   year: year,
                   address: address,
+                  medicalId: medicalId,
                   city: city,
                   provice: province,
                   pCode: pCode,
                   email: email,
                   uid: user.user.uid
                 }).then(() => {
-                  window.location = "home.html";
+                  // window.location = "home.html";
                 }).catch((err) => console.log("Docs: ", err));
               }).catch((err) => console.log("Creation: ", err));
             }).catch((err) => console.log("Persistence: ", err));
