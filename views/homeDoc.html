@@ -315,8 +315,8 @@
                         
                         <div class = "content">
                         <div id="patientBox">
-                        <div class=" text-center btn btn-success">Ready</div>
-                        <div class=" btn btn-danger">Not Active</div>
+                        <div class=" text-center btn btn-success" onClick = "yesAvailable()">Ready</div>
+                        <div class=" btn btn-danger" onClick = "noAvailable()">Not Active</div>
 
                         
                         
@@ -361,6 +361,12 @@
             <div class="Display h1 text-white">
 
             Current Status
+
+            <div id="statusShow">
+              
+
+
+            </div>
 
             </div>
 <!-- delete here -->
@@ -567,6 +573,25 @@
         firebase.firestore().collection('doctors').doc(user.uid)
         .update({available: true});
       })
+        document.getElementById('statusShow').innerHTML=""
+      $(document.getElementById('statusShow')).append(
+
+        '<div class="text-white h3 mt-5">' +
+
+        'Your Status is set to: <span class="text-success"> Available </span>' +
+
+        ' </div> '
+      
+                
+              );
+
+
+
+
+
+
+
+
     }
     function noAvailable() {
       const firebaseConfig = {
@@ -584,6 +609,22 @@
         firebase.firestore().collection('doctors').doc(user.uid)
         .update({available: false});
       })
+
+
+      document.getElementById('statusShow').innerHTML=""
+      $(document.getElementById('statusShow')).append(
+
+        '<div class="text-white h3 mt-5">' +
+
+        'Your Status is set to: <span class="text-danger"> Not Available </span>' +
+
+        ' </div> '
+      
+                
+              );
+
+
+
     }
   </script>
 
