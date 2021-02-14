@@ -87,7 +87,7 @@
                     firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
                       firebase.firestore().collection('doctors').doc(user.user.uid).get().then((doc) => {
                         if (doc.exists)
-                          window.location = "home.html";
+                          window.location = "homeDoc.html";
                         else {
                           firebase.auth().signOut();
                           console.log("Patient account");
