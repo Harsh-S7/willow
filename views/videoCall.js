@@ -18,11 +18,11 @@ const auth = firebase.auth();
  * create a listener that detects and updates sensor measurements
  */
 // var doctorUid = '';
-var patientUid = '';
+var doctorUid = '';
 // var dateConcat = localStorage.getItem('dateConcat');
 auth.onAuthStateChanged((user) => {
   // Log meeting data
-  patientUid = user.uid;
+  doctorUid = user.uid;
   // console.log('Doctor Uid: ', doctorUid);
   // console.log('Patient Uid: ', patientUid);
   // console.log('Date Concatenation: ', dateConcat);
@@ -214,7 +214,7 @@ function joinRoom() {
 
 // Is not needed on doctor's side, eventually will be deleted (deleting now will cause errors)
 async function joinRoomById() {
-  const roomId = (await db.collection('users').doc(patientUid).get()).data().webrtckey;
+  const roomId = (await db.collection('doctors').doc(doctorUid).get()).data().webrtckey;
   console.log("room ID: ", roomId);
   const roomRef = db.collection('rooms').doc(`${roomId}`);
   const roomSnapshot = await roomRef.get();

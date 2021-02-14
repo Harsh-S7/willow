@@ -18,6 +18,7 @@ const auth = firebase.auth();
  * create a listener that detects and updates sensor measurements
  */
 var doctorUid = sessionStorage.getItem('uid');
+console.log('doc id: ', doctorUid)
 var patientUid = '';
 // var dateConcat = localStorage.getItem('dateConcat');
 auth.onAuthStateChanged((user) => {
