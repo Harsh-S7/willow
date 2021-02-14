@@ -41,7 +41,7 @@
                 <div class="pt-5"></div>
                 <p class="h1 text-primary text-center pt-5 pb-5">
                 
-                Welcome to Willow
+                Welcome to Willow - Health Care Login
             
                 </p>
                 <p class="h3 text-primary text-center pt-5 pb-1">
@@ -85,12 +85,12 @@
                     firebase.initializeApp(firebaseConfig);
                   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
                     firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
-                      firebase.firestore().collection('users').doc(user.user.uid).get().then((doc) => {
+                      firebase.firestore().collection('doctors').doc(user.user.uid).get().then((doc) => {
                         if (doc.exists)
-                          window.location = "home.html";
+                          window.location = "homeDoc.html";
                         else {
                           firebase.auth().signOut();
-                          console.log("Attempted to log into doctor acct");
+                          console.log("Patient account");
                         }
                       });
                     }).catch((err) => console.log("Creation: ", err));
