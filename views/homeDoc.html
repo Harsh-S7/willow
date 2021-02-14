@@ -541,11 +541,13 @@
         firebase.initializeApp(firebaseConfig);
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-          db.collection("doctors").doc(user.uid)
+          firebase.firestore().collection("doctors").doc(user.uid)
           .onSnapshot((doc) => {
             const data = doc.data();
             if (data.webrtckey != '') {
               alert("Patient is currently waiting for you to join the call!")
+            } else {
+              console.log("No user at the moment.")
             }
           });
         } else {
