@@ -15,6 +15,11 @@
     Willow | Home
   </title>
   <!--     Fonts and icons     -->
+
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
@@ -572,6 +577,35 @@
       // sessionStorage.setItem('patientUid', patientUid);
       window.location = "videoCall.html";
     }
+  </script>
+  <script>
+    function checkVideoRequest() {
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnZoE_5mt2yCOo9t7UHK8xWHl-EQB6EIM",
+        authDomain: "willow-b91d1.firebaseapp.com",
+        projectId: "willow-b91d1",
+        storageBucket: "willow-b91d1.appspot.com",
+        messagingSenderId: "198516755663",
+        appId: "1:198516755663:web:a758a81fa8f4f580b17bba",
+        measurementId: "G-RW6LFK72XC"
+      };
+      if (!firebase.apps.length)
+        firebase.initializeApp(firebaseConfig);
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          db.collection("doctors").doc(user.uid)
+          .onSnapshot((doc) => {
+            const data = doc.data();
+            if (data.webrtckey != '') {
+              alert("Patient is currently waiting for you to join the call!")
+            }
+          });
+        } else {
+          window.location = "loginDoc.html";
+        }
+      })
+    }
+    checkVideoRequest();
   </script>
 
   <!--   Core JS Files   -->
