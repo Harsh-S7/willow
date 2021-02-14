@@ -575,18 +575,14 @@
       })
         document.getElementById('statusShow').innerHTML=""
       $(document.getElementById('statusShow')).append(
-                '<div class="col">' +
-                  '<div class="container">' +
-                    '<div class="card" style="width: 18rem;">' +
-                      '<img class="card-img-top" src="psych15.jpg" alt="Card image cap">' +
-                      '<div class="card-body">' +
-                        '<h5 class="card-title">Dr. ' + doctor.fName + ' ' + doctor.lName + '</h5>' +
-                        '<p class="card-text">' + doctor.city + ', ' + doctor.province + '</p>' +
-                        '<a onclick="checkAvailability(' + '`' + doctor.uid + '`' + ')" class="btn btn-primary">Send Video Request</a>' +
-                      '</div>' +
-                    '</div>' +
-                  '</div>' +
-                '</div>'
+
+        '<div class="text-white h3 mt-5">' +
+
+        'Your Status is set to: <span class="text-success"> Available </span>' +
+
+        ' </div> '
+      
+                
               );
 
 
@@ -613,6 +609,22 @@
         firebase.firestore().collection('doctors').doc(user.uid)
         .update({available: false});
       })
+
+
+      document.getElementById('statusShow').innerHTML=""
+      $(document.getElementById('statusShow')).append(
+
+        '<div class="text-white h3 mt-5">' +
+
+        'Your Status is set to: <span class="text-danger"> Not Available </span>' +
+
+        ' </div> '
+      
+                
+              );
+
+
+
     }
   </script>
 
