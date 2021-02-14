@@ -132,6 +132,11 @@
                     <h1 class="Display">Join Appointment</h1>
         
                     <form class="needs-validation" novalidate>
+
+
+                      <div id="noteShow">
+
+                      </div>
                     <!-- <div class="form-row">
                       <div class="col-md-6 mb-3">
                         <label for="validationCustom01">First name</label>
@@ -545,7 +550,23 @@
           .onSnapshot((doc) => {
             const data = doc.data();
             if (data.webrtckey != '') {
-              alert("Patient is currently waiting for you to join the call!")
+
+              document.getElementById('noteShow').innerHTML=""
+              $(document.getElementById('noteShow')).append(
+
+          '<div class="alert alert-success alert-dismissible fade show" role="alert">'+
+          '<strong>Someone is wanting to talk </br> </br> </strong> Click join now to join. ' +
+          '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+          '<span aria-hidden="true">&times;</span>' +
+          '</button>' +
+          '</div>'
+
+           );
+
+
+
+
+              // alert("Patient is currently waiting for you to join the call!")
             } else {
               console.log("No user at the moment.")
             }
