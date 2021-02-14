@@ -608,6 +608,43 @@
     checkVideoRequest();
   </script>
 
+  <script>
+    function yesAvailable() {
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnZoE_5mt2yCOo9t7UHK8xWHl-EQB6EIM",
+        authDomain: "willow-b91d1.firebaseapp.com",
+        projectId: "willow-b91d1",
+        storageBucket: "willow-b91d1.appspot.com",
+        messagingSenderId: "198516755663",
+        appId: "1:198516755663:web:a758a81fa8f4f580b17bba",
+        measurementId: "G-RW6LFK72XC"
+      };
+      if (!firebase.apps.length)
+        firebase.initializeApp(firebaseConfig);
+      firebase.auth().onAuthStateChanged((user) => {
+        firebase.firestore().collection('doctors').doc(user.uid)
+        .update({available: true});
+      })
+    }
+    function noAvailable() {
+      const firebaseConfig = {
+        apiKey: "AIzaSyAnZoE_5mt2yCOo9t7UHK8xWHl-EQB6EIM",
+        authDomain: "willow-b91d1.firebaseapp.com",
+        projectId: "willow-b91d1",
+        storageBucket: "willow-b91d1.appspot.com",
+        messagingSenderId: "198516755663",
+        appId: "1:198516755663:web:a758a81fa8f4f580b17bba",
+        measurementId: "G-RW6LFK72XC"
+      };
+      if (!firebase.apps.length)
+        firebase.initializeApp(firebaseConfig);
+      firebase.auth().onAuthStateChanged((user) => {
+        firebase.firestore().collection('doctors').doc(user.uid)
+        .update({available: false});
+      })
+    }
+  </script>
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
