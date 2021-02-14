@@ -17,12 +17,12 @@ const auth = firebase.auth();
  * Gathers the data to access correct patient and doctor database,
  * create a listener that detects and updates sensor measurements
  */
-var doctorUid = '';
-var patientUid = sessionStorage.getItem('patientUid');
+var doctorUid = sessionStorage.getItem('uid');
+var patientUid = '';
 // var dateConcat = localStorage.getItem('dateConcat');
 auth.onAuthStateChanged((user) => {
   // Log meeting data
-  doctorUid = user.uid;
+  patientUid = user.uid;
   console.log('Doctor Uid: ', doctorUid);
   console.log('Patient Uid: ', patientUid);
   // console.log('Date Concatenation: ', dateConcat);

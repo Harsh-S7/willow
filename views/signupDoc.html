@@ -264,7 +264,8 @@
                     </div> -->
 
                     <!-- <label class="form-label" for="customFile">Please attach a Profile Photo</label> -->
-                    <input type="file" class=" btn-outline-light" id="image" />
+                    <!-- <label for="myfile">Profile Picture:</label> -->
+                    <!-- <input type="file" class=" btn-outline-light" id="image" /> -->
                     <div class="row justify-content-center" align = "center">
                     <button class="btn btn-primary text-center" onclick="createAccount()" type="button" id="button"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Signup</button>
                 </div>
@@ -287,8 +288,8 @@
             const pCode = document.getElementById('pCode').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            const image = document.getElementById('image').value;
-            console.log(image)
+            // const image = document.getElementById('image').files;
+            // console.log(image)
             const firebaseConfig = {
               apiKey: "AIzaSyAnZoE_5mt2yCOo9t7UHK8xWHl-EQB6EIM",
               authDomain: "willow-b91d1.firebaseapp.com",
@@ -311,12 +312,12 @@
                   address: address,
                   medicalId: medicalId,
                   city: city,
-                  provice: province,
+                  province: province,
                   pCode: pCode,
                   email: email,
                   uid: user.user.uid
                 }).then(() => {
-                  window.location = "homeDoc.html";
+                  // window.location = "homeDoc.html";
                 }).catch((err) => console.log("Docs: ", err));
               }).catch((err) => console.log("Creation: ", err));
             }).catch((err) => console.log("Persistence: ", err));

@@ -133,8 +133,7 @@
               
 
               <div class="row">
-                <div id="DocShow"></div>
-                <!-- <div class="col">
+                <div class="col">
                   <div class="container">
                     <div class="card" style="width: 18rem;">
                       <img class="card-img-top" src="psych1.jpg" alt="Card image cap">
@@ -217,7 +216,7 @@
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div>
 
 
 
@@ -234,7 +233,7 @@
 
 
       </div>
-      <!-- <div class="row">
+      <div class="row">
         <div class="col">
 
           <div class="container">
@@ -283,7 +282,11 @@
 
 
 
-      </div> -->
+      </div>
+      <!-- <div class="row"> -->
+
+        <div id="DocShow"></div>
+      <!-- </div> -->
 
     </div>
 
@@ -292,7 +295,7 @@
     <script>
       function checkAvailability(uid) {
         sessionStorage.setItem("uid", uid);
-        window.location = "cal.html";
+        window.location = "videoCallDoc.html";
       }
       function loadDoctors() {
         const firebaseConfig = {
@@ -314,11 +317,11 @@
               '<div class="col">' +
                 '<div class="container">' +
                   '<div class="card" style="width: 18rem;">' +
-                    '<img class="card-img-top" src="psych1.jpg" alt="Card image cap">' +
+                    '<img class="card-img-top" src="psych15.jpg" alt="Card image cap">' +
                     '<div class="card-body">' +
                       '<h5 class="card-title">Dr. ' + doctor.fName + ' ' + doctor.lName + '</h5>' +
                       '<p class="card-text">' + doctor.city + ', ' + doctor.province + '</p>' +
-                      '<a onclick="checkAvailability(' + '`' + doctor.uid + '`' + ')" class="btn btn-primary">View Availability</a>' +
+                      '<a onclick="checkAvailability(' + '`' + doctor.uid + '`' + ')" class="btn btn-primary">Send Video Request</a>' +
                     '</div>' +
                   '</div>' +
                 '</div>' +
