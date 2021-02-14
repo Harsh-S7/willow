@@ -283,10 +283,11 @@
 
 
       </div>
-      <!-- <div class="row"> -->
+      <div class="row">
+
 
         <div id="DocShow"></div>
-      <!-- </div> -->
+      </div>
 
     </div>
 
@@ -312,9 +313,10 @@
         const doctors = [];
         firebase.firestore().collection('doctors').get().then((doctorQuery) => {
           doctorQuery.forEach(doctor => doctors.push(doctor.data()));
+          var htmlStr = '<div class="row">';
           doctors.forEach((doctor) => {
             if (doctor.available) {
-              $(document.getElementById('DocShow')).append(
+              htmlStr +=
                 '<div class="col">' +
                   '<div class="container">' +
                     '<div class="card" style="width: 18rem;">' +
@@ -326,10 +328,11 @@
                       '</div>' +
                     '</div>' +
                   '</div>' +
-                '</div>'
-              );
+                '</div>';
             }
           });
+          htmlStr += '</div>';
+          $(document.getElementById('DocShow')).append(htmlStr);
         });
       }
       loadDoctors();
