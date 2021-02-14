@@ -11,7 +11,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-       
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
 
@@ -53,14 +56,14 @@
                     <div class="form-row">
                       <div class="col-md-6 mb-3">
                         <label for="fname">First name</label>
-                        <input type="text" class="form-control border-light" id="fname"  required>
+                        <input type="text" class="form-control border-light" id="fName"  required>
                         <div class="valid-feedback">
                           Looks good!
                         </div>
                       </div>
                       <div class="col-md-6 mb-3">
                         <label for="lname">Last name</label>
-                        <input type="text" class="form-control border-light" id="lname"  required>
+                        <input type="text" class="form-control border-light" id="lName"  required>
                         <div class="valid-feedback">
                           Looks good!
                         </div>
@@ -201,7 +204,7 @@
                       </div>
                       <div class="col-md-3 mb-3">
                         <label for="pcode">Postal Code</label>
-                        <input type="text" class="form-control border-light" id="pcode" required>
+                        <input type="text" class="form-control border-light" id="pCode" required>
                         <div class="invalid-feedback">
                           Please provide a valid postal code.
                         </div>
@@ -246,12 +249,56 @@
                       </div>
                       
                     </div>
-                    <button class="btn btn-primary" type="submit" id="button"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Signup</button>
+                    <button class="btn btn-primary" onclick="createAccount()" type="button" id="button"><span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Signup</button>
                   </form>
 
         </div>
         
-        <script src="" async defer></script>
+        <script>
+          function createAccount() {
+            const fName = document.getElementById('fName').value;
+            const lName = document.getElementById('lName').value;
+            const month = document.getElementById('month').value;
+            const day = document.getElementById('day').value;
+            const year = document.getElementById('year').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const province = document.getElementById('province').value;
+            const pCode = document.getElementById('pCode').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const firebaseConfig = {
+              apiKey: "AIzaSyAnZoE_5mt2yCOo9t7UHK8xWHl-EQB6EIM",
+              authDomain: "willow-b91d1.firebaseapp.com",
+              projectId: "willow-b91d1",
+              storageBucket: "willow-b91d1.appspot.com",
+              messagingSenderId: "198516755663",
+              appId: "1:198516755663:web:a758a81fa8f4f580b17bba",
+              measurementId: "G-RW6LFK72XC"
+            };
+            if (!firebase.apps.length)
+              firebase.initializeApp(firebaseConfig);
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+              firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
+                firebase.firestore().collection('users').doc(user.user.uid).set({
+                  fName: fName,
+                  lName: lName,
+                  month: month,
+                  day: day,
+                  year: year,
+                  address: address,
+                  city: city,
+                  provice: province,
+                  pCode: pCode,
+                  email: email,
+                  uid: user.user.uid
+                }).then(() => {
+                  window.location = "home.html";
+                }).catch((err) => console.log("Docs: ", err));
+              }).catch((err) => console.log("Creation: ", err));
+            }).catch((err) => console.log("Persistence: ", err));
+          }
+        </script>
 
         <br />
         <br />
@@ -260,6 +307,7 @@
     </body>
 
     <!-- Core -->
+<!-- <script src="/controllers/auth.js"></script> -->
 <script src="../assets/js/core/jquery.min.js"></script>
 <script src="../assets/vendor/popper/popper.min.js"></script>
 <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
