@@ -3,7 +3,7 @@
 
 <head>
   <!-- Chat Bot -->
-  <script async type="text/javascript"> !function () { if (window.JOONBOT_WIDGET_ID) { console.warn("Joonbot snippet included twice"); } else { window.JOONBOT_WIDGET_ID = "2c5e0292-85df-44f3-893a-21fe1cd78aba"; var n, o; o = document.createElement("script"); o.src = "https://js.joonbot.com/init.js", o.defer = !0, o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous"; n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n); } }() </script>
+  <!-- <script async type="text/javascript"> !function () { if (window.JOONBOT_WIDGET_ID) { console.warn("Joonbot snippet included twice"); } else { window.JOONBOT_WIDGET_ID = "2c5e0292-85df-44f3-893a-21fe1cd78aba"; var n, o; o = document.createElement("script"); o.src = "https://js.joonbot.com/init.js", o.defer = !0, o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous"; n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n); } }() </script> -->
 
 
 
@@ -60,30 +60,11 @@
             </div>
           </div>
           <ul class="navbar-nav">
-            <li class="nav-item p-0">
-              <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-                <i class="fab fa-twitter"></i>
-                <p class="d-lg-none d-xl-none">Twitter</p>
-              </a>
-            </li>
-            <li class="nav-item p-0">
-              <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-                <i class="fab fa-facebook-square"></i>
-                <p class="d-lg-none d-xl-none">Facebook</p>
-              </a>
-            </li>
-            <li class="nav-item p-0">
-              <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <p class="d-lg-none d-xl-none">Instagram</p>
-              </a>
-            </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="login.html">Sign Out</a>
+              <a class="nav-link" href="loginDoc.html">Sign Out</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="getHelp.html" target="_blank">Get Help</a>
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -120,16 +101,20 @@
       <div class="row">
         <div class="col">
           <div id="appointment">
-            <div class="container">
+            
+            <div class="mb-5"><p>.</p></div>
+            <div class="mb-5"><p>.</p></div>
+            <div class="mb-5"><p>.</p></div>
+            <div class="container horizontal-center">
         
               
 
 
-                <div class="row">
+                <div class="row ml-5 mt-5 pt-5">
         
-                    <div class="col-md-6">
+                    <div class="col-md-6 ">
         
-                    <h1 class="Display">Join Appointment</h1>
+                    <h1 class="Display text-white">Join Appointment</h1>
         
                     <form class="needs-validation" novalidate>
 
@@ -312,15 +297,15 @@
                 
                     </div>  
         
-                    <div class = "col-md-6">
+                    <div class = "col-lg-6">
                        <div id="nopadding">
                      
                         <div class="AppBox">
-                        <h1 class = 'Patient'>Set Status</h1>
+                        <h1 class = 'Patient text-white pl-5'>Set Status</h1>
                         
-                        <div class = "content">
+                        <div class = "content pl-5">
                         <div id="patientBox">
-                        <div class=" text-center btn btn-success" onClick = "yesAvailable()">Ready</div>
+                        <div class=" text-center btn btn-success px-5 mb-4" onClick = "yesAvailable()">Ready</div>
                         <div class=" btn btn-danger" onClick = "noAvailable()">Not Active</div>
 
                         
@@ -354,6 +339,8 @@
           
                   </div>
         
+
+                  
                 </div>  
         
                 
@@ -361,163 +348,35 @@
             </div>
         
         </div>
-        <div class="col">
+       
+
+
+        <div class="col mt-5 pt-5 ml-5 pl-5">
+          <div class="mb-5"><p>.</p></div>
+          <div class="mb-5"><p>.</p></div>
+          <div class="mb-1"><p>.</p></div>
           
-            <div class="Display h1 text-white">
+          <div class="Display h1 text-white">
 
-            Current Status
+          Current Status
 
-            <div id="statusShow">
-              
+          <div id="statusShow">
+            
 
 
-            </div>
+          </div>
 
-            </div>
+          </div>
 <!-- delete here -->
 
-        </div>
+      </div>
         
     </div>
     <div class="row">
-      <div class="col">
-        <div class="card card-register pb-0">
-          <div class="card-header ">
-            <img class="card-img" src="../assets/img/UpdatedSquare.png" alt="Card image">
-            <h4 class="card-title text-white pl-3">workshops</h4>
-          </div>
-          <div class="card-body pb-0">
-            <table class="table">
-              <thead>
-                  <tr>
-                      <th class="text-center">#</th>
-                      <th>Name</th>
-                      <th>Date</th>
-                      <th>Time</th>
-                      <th class="text-right">Provider</th>
-                      <th class="text-right">Actions</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td class="text-center">1</td>
-                      <td>Community Helpers Training</td>
-                      <td>Feb 17</td>
-                      <td>9:00am - 12:30pm</td>
-                      <td class="text-right">UCalgary</td>
-                      <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon" data-toggle="modal" data-target="#firstModal">
-                              <i class="tim-icons icon-single-02"></i>
-                          </button>
-                          <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                              <i class="tim-icons icon-settings-gear-63"></i>
-                          </button>
-                          <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                              <i class="tim-icons icon-simple-remove"></i>
-                          </button>
-                      </td>
-                  </tr>
-
-                  <!--Modal for first item
-
-                  <div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="firstModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="firstModalLabel">Community Helpers Training</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button href="https://events.ucalgary.ca/wellness-services/#!view/event/event_id/251104" type="button" class="btn btn-primary">Learn more</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                -->
-
-
-
-
-
-                  <tr>
-                      <td class="text-center">2</td>
-                      <td>Safer Substance Use</td>
-                      <td>Feb 18</td>
-                      <td>10:00am - 12:00pm</td>
-                      <td class="text-right">UCalgary</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon" data-toggle="modal" data-target="#firstModal">
-                            <i class="tim-icons icon-single-02"></i>
-                        </button>
-                        <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                            <i class="tim-icons icon-settings-gear-63"></i>
-                        </button>
-                        <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </td>
-                  </tr>
-                  <tr>
-                      <td class="text-center">3</td>
-                      <td>Social Decision Making</td>
-                      <td>Feb 18</td>
-                      <td>3:00pm - 4:30pm</td>
-                      <td class="text-right">UCalgary</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon" data-toggle="modal" data-target="#firstModal">
-                            <i class="tim-icons icon-single-02"></i>
-                        </button>
-                        <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                            <i class="tim-icons icon-settings-gear-63"></i>
-                        </button>
-                        <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </td>
-                  </tr>
-              </tbody>
-          </table>
-          </div>
-          <div class="card-footer">
-            <a href="https://www.ucalgary.ca/wellness-services/staying-healthy/learning/workshops" target="_blank" class="btn btn-primary btn-round btn-lg">Find more</a>
-          </div>
-        </div>
-      </div>
+      <!--  -->
 
     <div class="row">
-      <div class="col">
-        <div class="card card-register ">
-          <div class="card-header pb-0 text-primary">
-            <!-- <img class="card-img" src="../assets/img/square1.png" alt="Card image"> -->
-            <h4 class="card-title text-primary pl-3">Important Numbers</h4>
-          </div>
-          <div class="card-body">
-            
-             <div class="container">
-              <p class="h4 mt-0">Emergency - 911</p>
-              <p class="h4 mt-0">Crisis Text Line - Text CONNECT to 741741</p>
-              <p class="h4 mt-0">Family Violence – Find Supports – 310-1818</p>
-              <p class="h4 mt-0">Kids Help Phone – 1-800-668-6868 or text CONNECT to 686868</p>
-
-
-              
-
-
-
-
-             </div>
-          
-        </div>
-      </div>
-  
-    </div>
+      
     </div>
 
   </div>
